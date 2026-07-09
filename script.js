@@ -96,7 +96,7 @@ const proyectos = [
   },
   {
     type: "image",
-    src: "proyectos/proyecto3.jpg",
+    src: "proyecto3.jpg",
     alt: "Proyecto comercial"
   },
   {
