@@ -116,19 +116,23 @@ function cargarGaleria() {
     const div = document.createElement("div");
     div.className = "media-item";
 
-    if (item.type === "image") {
-      div.innerHTML = `
-        ${item.src}
-      `;
-    }
+    
+if (item.type === "image") {
+  div.innerHTML = `
+    ${item.src}
+  `;
+}
 
-    if (item.type === "video") {
-      div.innerHTML = `
-        <video controls>
-          ${item.src}
-        </video>
-      `;
-    }
+
+   
+if (item.type === "video") {
+  div.innerHTML = `
+    <video controls>
+      ${item.src}
+    </video>
+  `;
+}
+
 
     gallery.appendChild(div);
   });
