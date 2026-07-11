@@ -108,7 +108,6 @@ function cargarGaleria() {
         const div = document.createElement("div");
         div.className = "media-item";
 
-        // Corrección: Inserción correcta de etiquetas HTML estructuradas
         if (item.type === "image") {
             div.innerHTML = `<img src="${item.src}" alt="${item.alt || 'Proyecto'}">`;
         } else if (item.type === "video") {
@@ -124,16 +123,19 @@ document.addEventListener("DOMContentLoaded", cargarGaleria);
 
 
 /* ==========================================================================
-   ENVÍO DEL FORMULARIO DE CONTACTO (AJAX)
+   ENVÍO DEL FORMULARIO DE CONTACTO (AJAX - SIN SALIR DE LA PÁGINA)
    ========================================================================== */
 const form = document.querySelector(".contact-form");
 
 if (form) {
     form.addEventListener("submit", async function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Evita que la página se recargue o redirija
+        
         const data = new FormData(form);
+        const mensajeExito = document.getElementById("mensaje-enviado");
 
         try {
+            // Enviamos los datos en segundo plano usando Fetch API
             const response = await fetch(form.action, {
                 method: "POST",
                 body: data,
@@ -141,16 +143,19 @@ if (form) {
             });
             
             if (response.ok) {
-                const mensaje = document.getElementById("mensaje-enviado");
-                if (mensaje) {
-                    mensaje.style.display = "block";
+                // Si el envío es correcto, modificamos el texto para incluir el agradecimiento
+                if (mensajeExito) {
+                    mensajeExito.innerHTML = "✅ ¡Muchas gracias por tu mensaje! Tu solicitud ha sido enviada correctamente. Nos pondremos en contacto contigo pronto.";
+                    mensajeExito.style.display = "block";
+                    mensajeExito.style.color = "#25d366"; // Color verde éxito
+                    mensajeExito.style.fontWeight = "bold";
                 }
-                form.reset();
+                form.reset(); // Limpia los campos del formulario de forma limpia
             } else {
-                alert("Hubo un error al enviar el formulario. Por favor, intenta de nuevo.");
+                alert("Hubo un problema al procesar el envío. Por favor, inténtalo de nuevo.");
             }
         } catch (error) {
-            alert("Error de conexión. No se pudo enviar la solicitud. Inténtalo más tarde.");
+            alert("Error de red. No se pudo establecer conexión para enviar el formulario.");
         }
     });
 }
