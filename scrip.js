@@ -1,6 +1,6 @@
 /* ==========================================================================
    CONFIGURACIÓN DE TRADUCCIONES (IDIOMAS)
-   ========================================================================= */
+   ========================================================================== */
 const translations = {
     es: {
         subtitle: "Venta, soporte, mantenimiento y proyectos",
@@ -64,10 +64,8 @@ const translations = {
     }
 };
 
-/**
- * Cambia el idioma de la página web (Global para responder al onclick del HTML)
- */
-function setLanguage(lang) {
+// Función global requerida por el onclick del HTML
+window.setLanguage = function(lang) {
     document.documentElement.lang = lang;
     localStorage.setItem("language", lang);
 
@@ -77,61 +75,58 @@ function setLanguage(lang) {
             element.textContent = translations[lang][key];
         }
     });
-}
+};
 
-// Cargar el idioma guardado inmediatamente al abrir la página
+// Cargar el idioma guardado de inmediato de manera segura
 const savedLanguage = localStorage.getItem("language") || (navigator.language.startsWith("es") ? "es" : "en");
-setLanguage(savedLanguage);
+window.setLanguage(savedLanguage);
 
 
 /* ==========================================================================
    GALERÍA DE PROYECTOS DINÁMICA
-   ========================================================================= */
+   ========================================================================== */
 const proyectos = [
     { type: "image", src: "proyectos/proyecto1.jpg", alt: "Proyecto residencial" },
     { type: "image", src: "proyecto2.jpg", alt: "Mantenimiento técnico" },
     { type: "image", src: "proyecto3.jpg", alt: "Proyecto comercial" },
     { type: "video", src: "proyectos/video1.mp4" }
-];
+ Regularise_proyectos];
 
 function cargarGaleria() {
     const gallery = document.getElementById("galleryContainer");
     if (!gallery) return;
     
     gallery.innerHTML = "";
-
     proyectos.forEach(item => {
         const div = document.createElement("div");
         div.className = "media-item";
-
         if (item.type === "image") {
             div.innerHTML = `<img src="${item.src}" alt="${item.alt || 'Proyecto'}">`;
         } else if (item.type === "video") {
             div.innerHTML = `<video controls><source src="${item.src}" type="video/mp4">Tu navegador no soporta videos.</video>`;
         }
-        
         gallery.appendChild(div);
     });
 }
 
-document.addEventListener("DOMContentLoaded", cargarGaleria);
-
 
 /* ==========================================================================
-   ENVÍO DEL FORMULARIO DE CONTACTO (AJAX - SIN SALIR DE LA PÁGINA)
-   ========================================================================= */
+   INTERCEPCIÓN DEL FORMULARIO (AJAX)
+   ========================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector(".contact-form");
+    // Carga la galería al iniciar
+    cargarGaleria();
 
+    const form = document.querySelector(".contact-form");
     if (form) {
         form.addEventListener("submit", async function(e) {
-            e.preventDefault(); // Detiene la recarga y evita que salga de la página
+            e.preventDefault(); // Detiene por completo la redirección y recarga de página
             
             const data = new FormData(form);
             const mensajeExito = document.getElementById("mensaje-enviado");
 
             try {
-                // Enviar datos en segundo plano mediante Fetch
+                // Envía los datos asíncronamente a FormSubmit
                 const response = await fetch(form.action, {
                     method: "POST",
                     body: data,
@@ -139,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
                 
                 if (response.ok) {
-                    // Genera y muestra el mensaje de agradecimiento sin alterar el diseño
                     if (mensajeExito) {
                         mensajeExito.innerHTML = "✅ ¡Muchas gracias por tu mensaje! Tu solicitud ha sido enviada con éxito. Nos comunicaremos contigo a la brevedad.";
                         mensajeExito.style.display = "block";
@@ -148,12 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         mensajeExito.style.marginTop = "15px";
                         mensajeExito.style.textAlign = "center";
                     }
-                    form.reset(); // Limpia los campos del formulario de forma limpia
+                    form.reset(); // Limpia las cajas de texto de manera interna
                 } else {
-                    alert("Hubo un error al enviar el formulario. Inténtalo de nuevo.");
+                    alert("Hubo un error al procesar el envío. Inténtalo de nuevo.");
                 }
             } catch (error) {
-                alert("Error de red. No se pudo conectar con el servidor de correos.");
+                alert("Error de red. Asegúrate de estar conectado a internet.");
             }
         });
     }
