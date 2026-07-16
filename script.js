@@ -120,20 +120,20 @@ function cargarGaleria() {
     const div = document.createElement("div");
     div.className = "media-item";
 
-    if (item.type === "image") {
-      div.innerHTML = `
-        ${item.src}
+   if (item.type === "image") {
+  div.innerHTML = `
+    <img src="${item.}
       `;
     }
 
-    if (item.type === "video") {
-      div.innerHTML = `
-        <video controls preload="metadata">
-          ${item.src}
-          Tu navegador no soporta videos.
-        </video>
-      `;
-    }
+   if (item.type === "video") {
+  div.innerHTML = `
+    <video controls preload="metadata">
+      ${item.src}
+      Tu navegador no soporta videos.
+    </video>
+  `;
+}
 
     gallery.appendChild(div);
   });
