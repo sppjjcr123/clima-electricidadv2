@@ -91,21 +91,28 @@ const proyectos = [
   {
     type: "image",
     src: "proyectos/proyecto1.jpg",
-    alt: "Proyecto residencial"
+    titulo: "Proyecto Residencial",
+    descripcion: "Instalación de sistema de aire acondicionado."
   },
+
   {
     type: "image",
     src: "proyectos/proyecto2.jpg",
-    alt: "Mantenimiento técnico"
+    titulo: "Instalación Comercial",
+    descripcion: "Montaje de equipo tipo minisplit."
   },
+
   {
     type: "image",
     src: "proyectos/proyecto3.jpg",
-    alt: "Proyecto comercial"
+    titulo: "Mantenimiento",
+    descripcion: "Servicio preventivo y correctivo."
   },
+
   {
     type: "video",
-    src: "proyectos/video1.mp4"
+    src: "proyectos/video1.mp4",
+    titulo: "Video del Proyecto"
   }
 ];
 
