@@ -514,4 +514,22 @@ a {
     flex-direction: column;
     text-align: center;
   }
+
+   .media-item{
+    overflow:hidden;
+    border-radius:18px;
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.media-item:hover{
+    transform:translateY(-8px);
+}
+
+.media-item img,
+.media-item video{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
 }
