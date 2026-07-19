@@ -572,4 +572,145 @@ a {
   display: block;
 }
    
+/* ==========================================================================
+   TARJETAS DE SERVICIOS CLICABLES
+========================================================================== */
+
+.service-card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(17, 58, 143, 0.18);
+}
+
+.service-card p {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: .95rem;
+}
+
+/* ==========================================================================
+   MODAL DE SERVICIOS
+========================================================================== */
+
+.modal-servicio {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 29, 79, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modal-servicio.modal-activo {
+  display: flex;
+}
+
+.modal-contenido {
+  background: #ffffff;
+  width: min(900px, 95%);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .25);
+  position: relative;
+  animation: modalEntrada .25s ease;
+}
+
+@keyframes modalEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #d61d36;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modal-cerrar:hover {
+  background: #a91428;
+}
+
+#modalImagen {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-texto {
+  padding: 28px;
+}
+
+.modal-texto h2 {
+  margin: 0 0 12px;
+  color: #113a8f;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+}
+
+.modal-texto p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.btn-whatsapp {
+  background: #25d366;
+}
+
+/* Responsive modal */
+
+@media (max-width: 700px) {
+  #modalImagen {
+    height: 240px;
+  }
+
+  .modal-texto {
+    padding: 22px;
+  }
+
+  .modal-texto h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions .btn {
+    text-align: center;
+  }
 }
