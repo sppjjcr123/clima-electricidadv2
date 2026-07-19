@@ -91,28 +91,29 @@ const proyectos = [
   {
     type: "image",
     src: "proyectos/proyecto1.jpg",
-    titulo: "Proyecto Residencial",
-    descripcion: "Instalación de sistema de aire acondicionado."
+    alt: "Proyecto residencial",
+    titulo: "Instalación Residencial",
+    descripcion: "Trabajo de instalación de equipo de aire acondicionado para espacio residencial."
   },
-
   {
     type: "image",
     src: "proyectos/proyecto2.jpg",
-    titulo: "Instalación Comercial",
-    descripcion: "Montaje de equipo tipo minisplit."
+    alt: "Instalación técnica",
+    titulo: "Instalación Profesional",
+    descripcion: "Montaje de equipo de climatización realizado por personal técnico."
   },
-
   {
     type: "image",
     src: "proyectos/proyecto3.jpg",
-    titulo: "Mantenimiento",
-    descripcion: "Servicio preventivo y correctivo."
+    alt: "Mantenimiento técnico",
+    titulo: "Mantenimiento Técnico",
+    descripcion: "Servicio de revisión, limpieza y soporte para equipos de aire acondicionado."
   },
-
   {
     type: "video",
     src: "proyectos/video1.mp4",
-    titulo: "Video del Proyecto"
+    titulo: "Video de Proyecto",
+    descripcion: "Muestra en video de trabajos y soluciones realizadas."
   }
 ];
 
@@ -124,34 +125,39 @@ function cargarGaleria() {
   gallery.innerHTML = "";
 
   proyectos.forEach(item => {
-
     const div = document.createElement("div");
     div.className = "media-item";
 
-  if (item.type === "image") {
+    if (item.type === "image") {
+      const img = document.createElement("img");
+      img.src = item.src;
+      img.alt = item.alt || "Proyecto";
 
-    const img = document.createElement("img");
+      div.appendChild(img);
+    }
 
-    img.src = item.src;
-    img.alt = item.alt || "Proyecto";
+    if (item.type === "video") {
+      const video = document.createElement("video");
+      video.controls = true;
+      video.src = item.src;
 
-    div.appendChild(img);
+      div.appendChild(video);
+    }
 
-}
+    const content = document.createElement("div");
+    content.className = "media-content";
 
-  if (item.type === "video") {
+    const titulo = document.createElement("h3");
+    titulo.textContent = item.titulo || "";
 
-    const video = document.createElement("video");
+    const descripcion = document.createElement("p");
+    descripcion.textContent = item.descripcion || "";
 
-    video.controls = true;
-    video.src = item.src;
+    content.appendChild(titulo);
+    content.appendChild(descripcion);
 
-    div.appendChild(video);
-
-}
-
+    div.appendChild(content);
     gallery.appendChild(div);
-
   });
 }
 /* ==========================================================================
