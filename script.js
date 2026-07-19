@@ -210,4 +210,81 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+/* ==========================================================================
+   MODAL DE SERVICIOS
+========================================================================== */
+
+const serviciosInfo = {
+  venta: {
+    titulo: "Venta de Equipos",
+    imagen: "servicios/venta-equipos.jpg",
+    descripcion:
+      "Ofrecemos equipos de aire acondicionado para uso residencial, comercial y empresarial. Te ayudamos a elegir la capacidad adecuada según el tamaño del espacio, necesidad de enfriamiento y presupuesto disponible."
+  },
+
+  instalacion: {
+    titulo: "Instalación Profesional",
+    imagen: "servicios/instalacion.jpg",
+    descripcion:
+      "Realizamos instalación profesional de equipos de aire acondicionado, cuidando la ubicación, conexión eléctrica, drenaje, seguridad y correcto funcionamiento del sistema."
+  },
+
+  soporte: {
+    titulo: "Soporte Técnico",
+    imagen: "servicios/soporte-tecnico.jpg",
+    descripcion:
+      "Brindamos diagnóstico técnico, revisión de fallas, evaluación del sistema y orientación para solucionar problemas de funcionamiento en equipos de climatización."
+  },
+
+  preventivo: {
+    titulo: "Mantenimiento Preventivo",
+    imagen: "servicios/mantenimiento-preventivo.jpg",
+    descripcion:
+      "El mantenimiento preventivo ayuda a mejorar el rendimiento del equipo, reducir consumo eléctrico, prevenir fallas y extender la vida útil del sistema de aire acondicionado."
+  },
+
+  correctivo: {
+    titulo: "Mantenimiento Correctivo",
+    imagen: "servicios/mantenimiento-correctivo.jpg",
+    descripcion:
+      "Atendemos fallas y problemas técnicos para recuperar el funcionamiento del equipo. Revisamos componentes, conexiones, limpieza, refrigeración y estado general del sistema."
+  },
+
+  proyectos: {
+    titulo: "Proyectos Empresariales",
+    imagen: "servicios/proyectos-empresariales.jpg",
+    descripcion:
+      "Desarrollamos soluciones de climatización para oficinas, comercios, negocios y empresas. Evaluamos necesidades, espacios, capacidad requerida y planificación del proyecto."
+  }
+};
+
+function abrirServicio(servicio) {
+  const info = serviciosInfo[servicio];
+
+  if (!info) return;
+
+  document.getElementById("modalTitulo").textContent = info.titulo;
+  document.getElementById("modalDescripcion").textContent = info.descripcion;
+  document.getElementById("modalImagen").src = info.imagen;
+  document.getElementById("modalImagen").alt = info.titulo;
+
+  document.getElementById("servicioModal").classList.add("modal-activo");
+}
+
+function cerrarServicio() {
+  document.getElementById("servicioModal").classList.remove("modal-activo");
+}
+
+document.addEventListener("click", function(event) {
+  const modal = document.getElementById("servicioModal");
+
+  if (event.target === modal) {
+    cerrarServicio();
+  }
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    cerrarServicio();
+  }
 });
