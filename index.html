@@ -1,1 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima y Electricidad</title>
+    <meta name="description" content="Venta, instalación, mantenimiento y soporte técnico de aire acondicionado para hogares y empresas.">
 
+    <!-- Fuentes de Google -->
+    https://fonts.googleapis.com
+    https://fonts.gstatic.com
+    https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- PORTADA -->
+    <section class="portada" aria-label="Portada principal">
+        <img src="Portada.png" alt="Portada Clima y Electricidad">
+    </section>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    https://wa.me/50588430110
+        WhatsApp
+    </a>
+
+    <!-- HEADER Y NAVEGACIÓN -->
+    <header class="topbar">
+        <div class="container nav">
+            #inicio
+                <img src="logo-clima-electricidad.jpg" alt="Logo Clima y Electricidad" class="brand-logo">
+                <div>
+                    <span class="brand-title">Clima y Electricidad</span>
+                    <span class="brand-subtitle" data-key="subtitle">Venta, soporte, mantenimiento y proyectos</span>
+                </div>
+            </a>
+
+            <nav class="menu" aria-label="Navegación principal">
+                #serviciosServicios</a>
+                #nosotrosNosotros</a>
+                #proyectosProyectos</a>
+                #contactoContacto</a>
+            </nav>
+
+            <div class="language-switcher" aria-label="Selector de idioma">
+                <button type="button" onclick="setLanguage('es')">MX ES</button>
+                <button type="button" onclick="setLanguage('en')">US EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div>
+                    <span class="badge" data-key="badge">Atención residencial y empresarial</span>
+
+                    <h1 data-key="hero_title">
+                        Especialistas en aire acondicionado, soporte técnico y proyectos integrales
+                    </h1>
+
+                    <p data-key="hero_text">
+                        Ofrecemos soluciones completas en venta, instalación, soporte técnico, mantenimiento preventivo y correctivo para hogares y empresas.
+                    </p>
+
+                    <div class="hero-actions">
+                        #contactoSolicitar cotización</a>
+                        #proyectosVer proyectos</a>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <h2 data-key="card_title">Soluciones a tu medida</h2>
+
+                    <div class="info-card">
+                        <h3 data-key="service1">Equipos de Aire Acondicionado</h3>
+                        <p data-key="service1_text">Venta de equipos para cualquier espacio.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 data-key="service2">Soporte Técnico</h3>
+                        <p data-key="service2_text">Diagnóstico profesional y mantenimiento.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 data-key="service3">Proyectos Integrales</h3>
+                        <p data-key="service3_text">Diseño e implementación para empresas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section class="section" id="servicios">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="kicker" data-key="services">Servicios</span>
+                    <h2 data-key="services_title">Todo lo que necesitas en climatización</h2>
+                </div>
+
+                <div class="cards">
+                    <article class="card service-card" onclick="abrirServicio('venta')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'venta')">
+                        servicios/venta-equipos.jpg
+                        <div class="card-body">
+                            <h3 data-key="venta">Venta de Equipos</h3>
+                            <p data-key="click_more">Haz clic para ver más información</p>
+                        </div>
+                    </article>
+
+                    <article class="card service-card" onclick="abrirServicio('instalacion')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'instalacion')">
+                        servicios/instalacion.jpg
+                        <div class="card-body">
+                            <h3 data-key="instalacion">Instalación Profesional</h3>
+                            <p data-key="click_more">Haz clic para ver más información</p>
+                        </div>
+                    </article>
+
+                    <article class="card service-card" onclick="abrirServicio('soporte')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'soporte')">
+                        servicios/soporte-tecnico.jpg
+                        <div class="card-body">
+                            <h3 data-key="soporte">Soporte Técnico</h3>
+                            <p data-key="click_more">Haz clic para ver más información</p>
+                        </div>
+                    </article>
+
+                    <article class="card service-card" onclick="abrirServicio('preventivo')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'preventivo')">
+                        servicios/mantenimiento-preventivo.jpg
+                        <div class="card-body">
+                            <h3 data-key="preventivo">Mantenimiento Preventivo</h3>
+                            <p data-key="click_more">Haz clic para ver más información</p>
+                        </div>
+                    </article>
+
+                    <article class="card service-card" onclick="abrirServicio('correctivo')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'correctivo')">
+                        servicios/mantenimiento-correctivo.jpg
+                        <div class="card-body">
+                            <h3 data-key="correctivo">Mantenimiento Correctivo</h3>
+                            <p data-key="click_more">Haz clic para ver más información</p>
+                        </div>
+                    </article>
+
+                    <article class="card service-card" onclick="abrirServicio('proyectos')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'proyectos')">
+                        servicios/proyectos-empresariales.jpg
+                        <div class="card-body">
+                            <h3 data-key="proyectos2">Proyectos Empresariales</h3>
+                            <p data-key="click_more">Haz clic para ver más información</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA -->
+        <section class="section section-alt" id="proyectos">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="kicker" data-key="gallery">Galería</span>
+                    <h2 data-key="gallery_title">Nuestros Proyectos</h2>
+                    <p data-key="gallery_text">Fotos y videos de instalaciones realizadas por nuestro equipo.</p>
+                </div>
+
+                <div id="galleryContainer" class="media-gallery" aria-live="polite">
+                    <!-- La galería se carga desde script.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- NOSOTROS -->
+        <section class="section" id="nosotros">
+            <div class="container about-grid">
+                <div>
+                    <span class="kicker" data-key="about">Nosotros</span>
+                    <h2 data-key="about_title">Experiencia, confianza y servicio integral</h2>
+                    <p data-key="about_text">
+                        Ofrecemos soluciones prácticas y eficientes en climatización para hogares, oficinas y empresas.
+                    </p>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <strong>Residencial</strong>
+                        <span>Casas y apartamentos</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <strong>Empresarial</strong>
+                        <span>Oficinas y comercios</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <strong>Mantenimiento</strong>
+                        <span>Preventivo y correctivo</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <strong>Asesoría</strong>
+                        <span>Proyectos y diseños</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO DESTACADO -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="kicker">Video</span>
+                    <h2 data-key="video_title">Video Destacado</h2>
+                </div>
+
+                <div class="video-section">
+                    <video controls preload="metadata" width="100%">
+                        proyectos/video1.mp4
+                        Tu navegador no soporta la reproducción de videos.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAPA -->
+        <section class="section map-section">
+            <div class="container map-grid">
+                <div>
+                    <span class="kicker">Ubicación</span>
+                    <h2 data-key="location_title">Encuéntranos fácilmente</h2>
+                    <p>Masaya, Nicaragua</p>
+                </div>
+
+                <div class="map-card">
+                    https://www.google.com/maps?q=Masaya,Nicaragua&z=15&output=embed
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="section cta-section" id="contacto">
+            <div class="container contact-grid">
+                <div>
+                    <span class="kicker">Contacto</span>
+                    <h2 data-key="contact_title">Solicita una cotización</h2>
+                    <p data-key="contact_text">Contáctanos y con gusto te ayudaremos.</p>
+
+                    <div class="contact-details">
+                        <p><strong>Teléfono:</strong> +505 8843-0110</p>
+                        <p><strong>Correo:</strong> daviddmcc@hotmail.com</p>
+                        <p><strong>WhatsApp:</strong> +505 8843-0110</p>
+                    </div>
+                </div>
+
+                https://formsubmit.co/sppjjcr@gmail.com
+                    <input type="hidden" name="_cc" value="daviddmcc@hotmail.com">
+                    <input type="hidden" name="_subject" value="Nueva Solicitud Web">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="form-row">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Correo</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn full">Enviar Solicitud</button>
+                    <div id="mensaje-enviado" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2026 Clima y Electricidad</p>
+            <p>GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE SERVICIOS -->
+    <div id="servicioModal" class="modal-servicio" aria-hidden="true">
+        <div class="modal-contenido" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+            <button class="modal-cerrar" type="button" onclick="cerrarServicio()" aria-label="Cerrar ventana">
+                ×
+            </button>
+
+            
+
+            <div class="modal-texto">
+                <h2 id="modalTitulo"></h2>
+                <p id="modalDescripcion"></p>
+
+                <div class="modal-actions">
+                    #contacto data-key="quote_button">
+                        Solicitar cotización
+                    </a>
+
+                    https://wa.me/50588430110?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
