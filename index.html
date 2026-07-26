@@ -6,10 +6,11 @@
     <title>Clima y Electricidad</title>
     <meta name="description" content="Venta, instalación, mantenimiento y soporte técnico de aire acondicionado para hogares y empresas.">
 
-<!-- Fuentes de Google -->
-<link rel="preconnectpis.com
-https://fonts.gstatic.com
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Open+Sans:wght@400;600;700&display=swap
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <!-- Estilos -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,29 +20,28 @@ https://fonts.gstatic.com
         <img src="Portada.png" alt="Portada Clima y Electricidad">
     </section>
 
- <a class="whatsapp-float" href="https://wa.me/0050588430110?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-    <span>WhatsApp</span>
-  </a>
-
-<!-- HEADER Y NAVEGACIÓN -->
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a class="whatsapp-btn" href="https://wa.me/50588430110?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <span>WhatsApp</span>
+    </a>
 
     <!-- HEADER Y NAVEGACIÓN -->
     <header class="topbar">
-    <div class="container nav">
-    #inicio
-        <img src="logo-clima-electricidad.jpg" alt="Logo Clima y Electricidad" class="brand-logo">
-        <div>
-            <span class="brand-title">Clima y Electricidad</span>
-            <span class="brand-subtitle" data-key="subtitle">Venta, soporte, mantenimiento y proyectos</span>
-        </div>
-    </a>
+        <div class="container nav">
+            <a href="#inicio" class="logo-link">
+                <img src="logo-clima-electricidad.jpg" alt="Logo Clima y Electricidad" class="brand-logo">
+                <div>
+                    <span class="brand-title">Clima y Electricidad</span>
+                    <span class="brand-subtitle" data-key="subtitle">Venta, soporte, mantenimiento y proyectos</span>
+                </div>
+            </a>
 
-  <nav class="menu" aria-label="Navegación principal">
-    #serviciosServicios</a>
-    #nosotrosNosotros</a>
-    #proyectosProyectos</a>
-    #contactoContacto</a>
-</nav>
+            <nav class="menu" aria-label="Navegación principal">
+                <a href="#servicios" data-key="nav_services">Servicios</a>
+                <a href="#nosotros" data-key="nav_about">Nosotros</a>
+                <a href="#proyectos" data-key="nav_projects">Proyectos</a>
+                <a href="#contacto" data-key="nav_contact">Contacto</a>
+            </nav>
 
             <div class="language-switcher" aria-label="Selector de idioma">
                 <button type="button" onclick="setLanguage('es')">MX ES</button>
@@ -66,8 +66,8 @@ https://fonts.gstatic.com
                     </p>
 
                     <div class="hero-actions">
-                        #contactoSolicitar cotización</a>
-                        #proyectosVer proyectos</a>
+                        <a href="#contacto" class="btn" data-key="quote_button">Solicitar cotización</a>
+                        <a href="#proyectos" class="btn btn-secondary" data-key="projects_button">Ver proyectos</a>
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@ https://fonts.gstatic.com
 
                 <div class="cards">
                     <article class="card service-card" onclick="abrirServicio('venta')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'venta')">
-                        servicios/venta-equipos.jpg
+                        <img src="servicios/venta-equipos.jpg" alt="Venta de equipos">
                         <div class="card-body">
                             <h3 data-key="venta">Venta de Equipos</h3>
                             <p data-key="click_more">Haz clic para ver más información</p>
@@ -110,7 +110,7 @@ https://fonts.gstatic.com
                     </article>
 
                     <article class="card service-card" onclick="abrirServicio('instalacion')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'instalacion')">
-                        servicios/instalacion.jpg
+                        <img src="servicios/instalacion.jpg" alt="Instalación profesional">
                         <div class="card-body">
                             <h3 data-key="instalacion">Instalación Profesional</h3>
                             <p data-key="click_more">Haz clic para ver más información</p>
@@ -118,7 +118,7 @@ https://fonts.gstatic.com
                     </article>
 
                     <article class="card service-card" onclick="abrirServicio('soporte')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'soporte')">
-                        servicios/soporte-tecnico.jpg
+                        <img src="servicios/soporte-tecnico.jpg" alt="Soporte técnico">
                         <div class="card-body">
                             <h3 data-key="soporte">Soporte Técnico</h3>
                             <p data-key="click_more">Haz clic para ver más información</p>
@@ -126,7 +126,7 @@ https://fonts.gstatic.com
                     </article>
 
                     <article class="card service-card" onclick="abrirServicio('preventivo')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'preventivo')">
-                        servicios/mantenimiento-preventivo.jpg
+                        <img src="servicios/mantenimiento-preventivo.jpg" alt="Mantenimiento preventivo">
                         <div class="card-body">
                             <h3 data-key="preventivo">Mantenimiento Preventivo</h3>
                             <p data-key="click_more">Haz clic para ver más información</p>
@@ -134,7 +134,7 @@ https://fonts.gstatic.com
                     </article>
 
                     <article class="card service-card" onclick="abrirServicio('correctivo')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'correctivo')">
-                        servicios/mantenimiento-correctivo.jpg
+                        <img src="servicios/mantenimiento-correctivo.jpg" alt="Mantenimiento correctivo">
                         <div class="card-body">
                             <h3 data-key="correctivo">Mantenimiento Correctivo</h3>
                             <p data-key="click_more">Haz clic para ver más información</p>
@@ -142,7 +142,7 @@ https://fonts.gstatic.com
                     </article>
 
                     <article class="card service-card" onclick="abrirServicio('proyectos')" tabindex="0" role="button" onkeydown="cardKeyOpen(event, 'proyectos')">
-                        servicios/proyectos-empresariales.jpg
+                        <img src="servicios/proyectos-empresariales.jpg" alt="Proyectos empresariales">
                         <div class="card-body">
                             <h3 data-key="proyectos2">Proyectos Empresariales</h3>
                             <p data-key="click_more">Haz clic para ver más información</p>
@@ -212,7 +212,7 @@ https://fonts.gstatic.com
 
                 <div class="video-section">
                     <video controls preload="metadata" width="100%">
-                        proyectos/video1.mp4
+                        <source src="proyectos/video1.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de videos.
                     </video>
                 </div>
@@ -229,8 +229,7 @@ https://fonts.gstatic.com
                 </div>
 
                 <div class="map-card">
-                    https://www.google.com/maps?q=Masaya,Nicaragua&z=15&output=embed
-                    </iframe>
+                    <iframe src="https://www.google.com/maps?q=Masaya,Nicaragua&z=15&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -250,7 +249,7 @@ https://fonts.gstatic.com
                     </div>
                 </div>
 
-                https://formsubmit.co/sppjjcr@gmail.com
+                <form class="contact-form" action="https://formsubmit.co/sppjjcr@gmail.com" method="POST">
                     <input type="hidden" name="_cc" value="daviddmcc@hotmail.com">
                     <input type="hidden" name="_subject" value="Nueva Solicitud Web">
                     <input type="hidden" name="_captcha" value="false">
@@ -297,18 +296,18 @@ https://fonts.gstatic.com
                 ×
             </button>
 
-            
+            <img id="modalImagen" src="" alt="" style="display: block;">
 
             <div class="modal-texto">
                 <h2 id="modalTitulo"></h2>
                 <p id="modalDescripcion"></p>
 
                 <div class="modal-actions">
-                    #contacto data-key="quote_button">
+                    <a href="#contacto" class="btn" data-key="quote_button">
                         Solicitar cotización
                     </a>
 
-                    https://wa.me/50588430110?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios
+                    <a href="https://wa.me/50588430110?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
                         WhatsApp
                     </a>
                 </div>
