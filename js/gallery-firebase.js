@@ -1,7 +1,5 @@
 import {
   collection,
-  query,
-  orderBy,
   getDocs
 } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js';
 
@@ -10,5 +8,32 @@ import {
   firestore
 } from './firebase-loader.js';
 
-console.log('✅ gallery-firebase.js cargado');
-alert('gallery-firebase.js cargado correctamente');
+setTimeout(async () => {
+
+  if (!firebaseAvailable) {
+    alert('❌ Firebase NO conectado');
+    return;
+  }
+
+  try {
+
+    const snapshot = await getDocs(
+      collection(firestore, 'media')
+    );
+
+    alert(
+      `✅ Documentos encontrados: ${snapshot.size}`
+    );
+
+    console.log(snapshot);
+
+  } catch (error) {
+
+    console.error(error);
+
+    alert(
+      '❌ Error leyendo Firestore'
+    );
+  }
+
+}, 2000);
