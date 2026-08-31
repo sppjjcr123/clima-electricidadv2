@@ -21,19 +21,19 @@ setTimeout(async () => {
       collection(firestore, 'media')
     );
 
-    alert(
-      `✅ Documentos encontrados: ${snapshot.size}`
-    );
+    snapshot.forEach((doc) => {
+      console.log('Documento:', doc.id);
+      console.log(doc.data());
+    });
 
-    console.log(snapshot);
+    alert(`✅ Documentos leídos: ${snapshot.size}`);
 
   } catch (error) {
 
     console.error(error);
 
-    alert(
-      '❌ Error leyendo Firestore'
-    );
+    alert('❌ Error leyendo Firestore');
+
   }
 
 }, 2000);
